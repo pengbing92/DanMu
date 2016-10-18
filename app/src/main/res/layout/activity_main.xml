@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.whut.danmudemo.MainActivity">
+
+    <VideoView
+        android:id="@+id/playVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <!-- 注意一定要将DanmakuView写在VideoView的下面，
+        因为RelativeLayout中后添加的控件会被覆盖在上面 -->
+    
+    <master.flame.danmaku.ui.widget.DanmakuView
+        android:id="@+id/danmuOfbilibili"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/sendDanMu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:background="#fff">
+
+        <EditText
+            android:id="@+id/edit_danmu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/sendDanMu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="发送"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
